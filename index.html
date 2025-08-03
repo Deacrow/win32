@@ -1,26 +1,50 @@
-<script src="UserController.js"></script>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MindMatch</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="MenuController.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="main-menu">
-    <header>
-      <h1>MindMatch</h1>
-      <button onclick="location.href='settings.html'">⚙</button>
-    </header>
-    <section id="stats">
-      <canvas id="lineChart"></canvas>
-      <canvas id="pieChart"></canvas>
-    </section>
-    <section id="set-list">
-        <button onclick="">Set1</button>
-    </section>
+
+<div class="container py-4">
+  <!-- LOGIN -->
+  <div id="loginContainer" class="text-center">
+    <h1 class="mb-3">MindMatch</h1>
+    <input id="usernameInput" class="form-control w-50 mx-auto mb-3" placeholder="Insert your name here" />
+    <button class="btn btn-primary" onclick="CheckForSavedUser()">Submit</button>
   </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="card-custom mb-4 d-none">
+    <div class="d-flex justify-content-between align-items-center">
+      <h3>MindMatch</h3>
+      <div>
+        <a onclick="Logout()" href="index.html" ><img class="icon" src="https://img.icons8.com/?size=100&id=84435&format=png&color=000000" /></a>
+        <a href="options.html" ><img class="icon" src="https://img.icons8.com/?size=100&id=53420&format=png&color=000000" /></a>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-md-6 d-flex flex-column align-items-center justify-content-center text-center chart-wrapper">
+        <h4>Matches over time</h4>
+        <canvas id="lineChart" height="150"></canvas>
+      </div>
+     <div class="col-md-6 d-flex flex-column align-items-center justify-content-center text-center circle-chart-wrapper">
+      <h4>Total answers</h4>
+      <canvas id="pieChart"></canvas>
+    </div>
+</div>
+      <!-- SETS -->
+    <div class="row mt-4" id="setsContainer">
+    </div>
+    </div>
+</div>
 </body>
 </html>
-
-<!-- 

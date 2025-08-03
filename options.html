@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MindMatch</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container py-4">
+  <div class="card-custom mb-4">
+    <div class="d-flex justify-content-between align-items-center position-relative">
+      <h3 id="optionsTitle" class="mb-0">Options</h3>
+        <a href="index.html"><img class="icon" src="https://img.icons8.com/ios-filled/32/000000/home.png" /></a>
+    </div>
+
+      <!-- Answer Type -->
+    <div class="mb-3">
+      <label class="form-label fw-bold" id="answerTypeLabel">Answer Type</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="answerType" id="multipleChoice" value="true">
+        <label class="form-check-label" id="mcLabel">Multiple Choice</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="answerType" id="textInput" value="false">
+        <label class="form-check-label" id="textLabel">Free Text</label>
+      </div>
+    </div>
+
+    <!-- Sounds -->
+    <div class="mb-3">
+      <label class="form-label fw-bold" id="soundLabel">Sound</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="sfxCheck">
+        <label class="form-check-label" id="sfxLabel">Sound Effects</label>
+      </div>
+    </div>
+
+    <!-- Language -->
+    <div class="mb-3">
+      <label class="form-label fw-bold" id="languageLabel">Language</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="language" id="langEng" value="English">
+        <label class="form-check-label">English</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="language" id="langDe" value="German">
+        <label class="form-check-label">Deutsch</label>
+      </div>
+      <small class="form-text text-muted" id="langNote">This does not affect the language of question sets.</small>
+    </div>
+
+    <button class="btn btn-dark w-100 mt-4" id="saveBtn">Save</button>
+  </div>
+</div>
+
+<script src="OptionsController.js"></script>
+</body>
+</html>
