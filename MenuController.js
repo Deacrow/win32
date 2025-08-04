@@ -36,7 +36,7 @@ function Translate(language) {
   document.querySelectorAll("#dashboard .col-md-6 h4")[1].textContent = translations.total;
 
   
-      DisplayMenu(translations);
+  DisplayMenu(translations);
 }
 
 
@@ -57,8 +57,8 @@ function CheckForSavedUser() {
       }
 
       localStorage.setItem("UserID", data.UserID); 
-      localStorage.setItem("UsesMultipleChoice", data.UsesMultipleChoice); 
-      localStorage.setItem("AreSoundEffectsOn", data.AreSoundEffectsOn); 
+      localStorage.setItem("UsesMultipleChoice", data.UsesMultipleChoice ? "true" : "false");
+      localStorage.setItem("AreSoundEffectsOn", data.AreSoundEffectsOn ? "true" : "false");
       localStorage.setItem("Language", data.Language); 
       document.getElementById("loginContainer").classList.add("d-none");
       document.getElementById("dashboard").classList.remove("d-none");
