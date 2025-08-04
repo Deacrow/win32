@@ -60,7 +60,7 @@ document.getElementById("saveBtn").addEventListener("click", () => {
     if (k !== "UserID") localStorage.setItem(k, v);
   });
 
-  fetch("http://51.21.31.63/submitOptions.php", {
+  fetch("https://www.deacrow.com/submitOptions.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(settings)
