@@ -181,18 +181,29 @@ function DisplayMenu(translations) {
       const container = document.getElementById("setsContainer");
       container.innerHTML = "";
       sets.forEach(set => {
-        const col = document.createElement("div");
-        col.className = "col-6 col-md-4 mb-2";
+  const col = document.createElement("div");
+  col.style.flex = "1 1 45%";
+  col.style.maxWidth = "45%";
+  col.style.margin = "1rem";
+  col.style.boxSizing = "border-box";
 
-        col.innerHTML = `
-          <button onclick="StartSet(${set.SetID})" class="btn w-100 text-white" 
-                  style="background-image: url('${set.SetImage}'); background-size: cover; height: 200px;">
-            <div style="background-color: rgba(0,0,0,0.5); padding: 10px;">${set.SetName}</div>
-          </button>
-        `;
+  col.innerHTML = `
+    <div style="background-color: #bde6e6; border-radius: 20px; overflow: hidden;">
+      <button onclick="StartSet(${set.SetID})"
+              style="width: 100%; height: 200px; background-image: url('${set.SetImage}');
+                     background-size: cover; background-position: center; border: none;
+                     cursor: pointer; position: relative; padding: 0; color: white;">
+        <div style="position: absolute; bottom: 0; width: 100%;
+                    background-color: rgba(0,0,0,0.5); padding: 10px; text-align: center;">
+          ${set.SetName}
+        </div>
+      </button>
+    </div>
+  `;
 
-        container.appendChild(col);
-      });
+  container.appendChild(col);
+});
+
     });
 }
 
