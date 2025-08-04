@@ -43,7 +43,7 @@ function Translate(language) {
 function CheckForSavedUser() {
   const username = document.getElementById("usernameInput").value.trim();
 
-  fetch("https://www.deacrow.com/getUser.php", {
+  fetch("https://deacrow.com/getUser.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ UserName: username })
@@ -78,7 +78,7 @@ function DisplayMenu(translations) {
   const UserID = localStorage.getItem("UserID");
   if (!UserID) return;
 
-  fetch("https://www.deacrow.com/getCompletedSets.php", {
+  fetch("https://deacrow.com/getCompletedSets.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ UserID })
@@ -174,7 +174,7 @@ function DisplayMenu(translations) {
 
 
   //SETS
-  fetch("https://www.deacrow.com/getSets.php")
+  fetch("https://deacrow.com/getSets.php")
     .then(res => res.json())
     .then(sets => {
       console.log("Sets:", sets);
@@ -197,7 +197,7 @@ function DisplayMenu(translations) {
 }
 
 function StartSet(SetID) {
-  fetch("https://www.deacrow.com/getSet.php", {
+  fetch("https://deacrow.com/getSet.php", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ SetID })

@@ -130,7 +130,7 @@ el("nextBtn").onclick = () => {
 };
 
 el("finishBtn").onclick = () => {
-  fetch("https://www.deacrow.com/submitSet.php", {
+  fetch("https://deacrow.com/submitSet.php", {
     method: "POST", headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       UserID: localStorage.getItem("UserID"),
