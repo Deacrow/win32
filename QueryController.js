@@ -63,7 +63,7 @@ function ShowQuestion() {
   if (usesMC) {
     q.answers.forEach(a => {
       const col = document.createElement("div");
-      col.className = "col-md-6 mb-2";
+      col.className = "set-col col-6 col-sm-6 col-md-4 col-lg-3 p-2";
       const btn = document.createElement("button");
       btn.className = "btn btn-outline-primary answer-btn w-100";
       btn.textContent = a.AnswerText;

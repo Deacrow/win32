@@ -182,11 +182,7 @@ function DisplayMenu(translations) {
       container.innerHTML = "";
       sets.forEach(set => {
   const col = document.createElement("div");
-  col.style.flex = "1 1 45%";
-  col.style.maxWidth = "45%";
-  col.style.margin = "1rem";
-  col.style.boxSizing = "border-box";
-
+  col.className = "set-col col-6 col-sm-6 col-md-4 col-lg-3 p-2";
   col.innerHTML = `
     <div style="background-color: #bde6e6; border-radius: 20px; overflow: hidden;">
       <button onclick="StartSet(${set.SetID})"
