@@ -28,26 +28,6 @@ const t = {
 const lang = localStorage.getItem("Language") || "German";
 const tr = t[lang];
 
-function Translate() {
-  document.getElementById("optionsTitle").innerText = tr.Optionen;
-  document.getElementById("answerTypeLabel").innerText = tr.Antworttyp;
-  document.getElementById("mcLabel").innerText = tr["Multiple Choice"];
-  document.getElementById("textLabel").innerText = tr.Freitextfeld;
-  document.getElementById("soundLabel").innerText = tr.Ton;
-  document.getElementById("sfxLabel").innerText = tr.Soundeffekte;
-  document.getElementById("languageLabel").innerText = tr.Sprache;
-  document.getElementById("langNote").innerText = tr.Hinweis;
-  document.getElementById("saveBtn").innerText = tr.Speichern;
-}
-
-function DisplayOptions() {
-  document.getElementById("multipleChoice").checked = localStorage.getItem("UsesMultipleChoice") === "true";
-  document.getElementById("textInput").checked = localStorage.getItem("UsesMultipleChoice") === "false";
-  document.getElementById("sfxCheck").checked = localStorage.getItem("AreSoundEffectsOn") === "true";
-  document.getElementById("langEng").checked = lang === "English";
-  document.getElementById("langDe").checked = lang === "German";
-}
-
 document.getElementById("saveBtn").addEventListener("click", () => {
   const settings = {
     UserID: localStorage.getItem("UserID"),
@@ -82,3 +62,23 @@ document.getElementById("saveBtn").addEventListener("click", () => {
 
 Translate();
 DisplayOptions();
+
+function Translate() {
+  document.getElementById("optionsTitle").innerText = tr.Optionen;
+  document.getElementById("answerTypeLabel").innerText = tr.Antworttyp;
+  document.getElementById("mcLabel").innerText = tr["Multiple Choice"];
+  document.getElementById("textLabel").innerText = tr.Freitextfeld;
+  document.getElementById("soundLabel").innerText = tr.Ton;
+  document.getElementById("sfxLabel").innerText = tr.Soundeffekte;
+  document.getElementById("languageLabel").innerText = tr.Sprache;
+  document.getElementById("langNote").innerText = tr.Hinweis;
+  document.getElementById("saveBtn").innerText = tr.Speichern;
+}
+
+function DisplayOptions() {
+  document.getElementById("multipleChoice").checked = localStorage.getItem("UsesMultipleChoice") === "true";
+  document.getElementById("textInput").checked = localStorage.getItem("UsesMultipleChoice") === "false";
+  document.getElementById("sfxCheck").checked = localStorage.getItem("AreSoundEffectsOn") === "true";
+  document.getElementById("langEng").checked = lang === "English";
+  document.getElementById("langDe").checked = lang === "German";
+}

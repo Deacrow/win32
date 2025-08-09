@@ -187,7 +187,7 @@ function DisplayMenu(translations) {
     <div style="background-color: #bde6e6; border-radius: 20px; overflow: hidden;">
       <button onclick="StartSet(${set.SetID})"
               style="width: 100%; height: 200px; background-image: url('${set.SetImage}');
-                     background-size: cover; background-position: center; border: none;
+                     background-size: cover; background-position: center; border: d-none;
                      cursor: pointer; position: relative; padding: 0; color: white;">
         <div style="position: absolute; bottom: 0; width: 100%;
                     background-color: rgba(0,0,0,0.5); padding: 10px; text-align: center;">
@@ -198,9 +198,8 @@ function DisplayMenu(translations) {
   `;
 
   container.appendChild(col);
+  });
 });
-
-    });
 }
 
 function StartSet(SetID) {
