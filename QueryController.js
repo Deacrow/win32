@@ -108,7 +108,7 @@ function ShowQuestion() {
   el("questionImage").src = q.QuestionImage;
 
   el("feedback").classList.add("d-none");
-  el("nextBtn").style.display = "d-none";
+  el("nextBtn").style.display = "none";
   el("submitBtn").style.display = "block";
 
   el("answerContainer").innerHTML = "";
